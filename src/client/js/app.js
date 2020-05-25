@@ -42,8 +42,6 @@ async function performAction() {
   let weatherData = {}
   let pictureData = {}
   let destination =  document.getElementById('destination').value;
-  let startdate = document.getElementById('startdate').value;
-  let enddate = document.getElementById('enddate').value;
    
   geoData = await geonamesApi(baseURL, destination, apiKey)
   console.log(geoData);
@@ -65,6 +63,8 @@ async function performAction() {
   await handleUI()
 }
 function datedifference() {
+  let startdate = document.getElementById('startdate').value;
+  let enddate = document.getElementById('enddate').value;
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const firstDate = new Date(startdate);
   const secondDate = new Date(enddate);
