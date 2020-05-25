@@ -2,6 +2,8 @@
 
 I have used html, css, javascript, node.js, express etc to build this.
 
+I have added enddate and displayed trip duration. (extending project feature)
+
 description : integrated geonames api, weatherbit api and pixabay api to get the required data.
 
 #to install all the dependencies run npm install.
