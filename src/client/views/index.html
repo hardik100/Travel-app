@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel app</title>
+</head>
+<body>
+    <header>
+        <h1>Travel App - Udacity</h1>
+    </header>
+    <div>
+        <h2>Your journey starts here</h2>
+    </div>
+    
+   <div id="trip-container">
+    <form>
+        <label for="city">Destination:</label>
+        <input id="destination" type="text" placeholder="Destination" required>
+        <label for="startdate">Start date:</label>
+        <input id="startdate" type="date" required>
+        <label for="enddate">End date:</label>
+        <input id="enddate" type="date" required>
+        <input id="submit" type="button" value="here you go">
+      </form>
+   </div>
+     
+     <div id="displaytrip">
+      <p>Results:</p>
+      <p>Trip duration : <span id="duration"></span> days</p>
+      <p>City : <span id="city"></span></p> 
+      <p>Country : <span id="country"></span></p>
+      <p>Latitude : <span id="lat"></span></p>
+      <p>Longitude : <span id="lng"></span></p>
+      <p>Highest temp : <span id="hightemp"></span></p>
+      <p>Lowest temp : <span id="lowtemp"></span></p>
+      <div id="picture"></div>
+    </div>
+
+    <footer id="ft">Developer : Hardik Khatri.</footer>
+    <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    } else {
+      console.info("serviceWorker not supported");
+    }
+  </script>
+</body>
+
+</html>
